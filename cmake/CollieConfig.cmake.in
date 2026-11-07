@@ -1,0 +1,11 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(Threads)
+find_dependency(
+  ROOT 6.20 CONFIG
+  COMPONENTS Core RIO Hist Graf Gpad Tree MathCore Minuit2
+)
+
+include("${CMAKE_CURRENT_LIST_DIR}/CollieTargets.cmake")
+check_required_components(Collie)
